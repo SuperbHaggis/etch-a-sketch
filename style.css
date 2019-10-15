@@ -1,0 +1,47 @@
+body{
+  background-color: darkgrey; 
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#title {
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#frame {
+  display: flex;
+  min-width: 500px;
+  min-height: 500px;
+  max-width: 500px;
+  max-height: 500px;
+  background-color: red;
+  margin: auto;
+  border-radius: 20px;
+}
+
+#gridContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  max-height: 400px;
+  margin: auto;
+}
+
+.gridItem {
+  flex: 1;
+  min-width: 25px;
+  min-height: 25px;
+  background-color: white;
+}
+
+.hoverEffect {
+  flex: 1;
+  min-width: 25px;
+  min-height: 25px;
+  background-color: black;
+}
