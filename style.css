@@ -1,16 +1,15 @@
 body{
-  background-color: darkgrey; 
+  background-color: lightcoral; 
 }
 
 #container {
   display: flex;
+  padding-top: 50px;
   flex-direction: column;
 }
 
-#title {
-  margin: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
+#reset {
+
 }
 
 #frame {
@@ -21,27 +20,35 @@ body{
   max-height: 500px;
   background-color: red;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 5px;
+  flex-direction: column;
+  align-content: center;
+}
+
+#title {
+ margin: auto;
+ color:#faaa2a;
 }
 
 #gridContainer {
   display: flex;
-  flex-wrap: wrap;
   max-width: 400px;
   max-height: 400px;
+  min-width: 400px;
+  min-height: 400px;
   margin: auto;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
 }
 
 .gridItem {
-  flex: 1;
+  flex: 1; /*not necessary?*/
   min-width: 25px;
   min-height: 25px;
-  background-color: white;
+  background-color: grey;
 }
 
 .hoverEffect {
-  flex: 1;
-  min-width: 25px;
-  min-height: 25px;
+  flex: 1; /*not necessary?*/
   background-color: black;
 }
