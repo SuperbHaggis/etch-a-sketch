@@ -10,6 +10,7 @@ for (i = 0; i < 256; i++) {
   gridContainer.appendChild(gridItems);
   gridItems.classList.add('gridItem');
   assignGridId();
+  mouseOver();
 };
 
 //Assign gridItem IDs
@@ -23,7 +24,7 @@ function assignGridId() {
 //Reset Function
 function resetGrid() {
   document.querySelectorAll('.gridItem').forEach((div) => {
-    div.classList.remove('hoverEffect');
+    div.classList.remove('stageOne');
   });
 };
 
@@ -62,19 +63,11 @@ document.querySelectorAll('#resize').forEach((button) => {
   });
 });
 
-//Mouseover event listener
-document.querySelectorAll('.gridItem').forEach((div) => {
-  div.addEventListener('mouseover', e => {
-    div.classList.add('hoverEffect');
-    //console.log(div.id);
-  });
-});
-
 //Mouseover function
 function mouseOver() {
   document.querySelectorAll('.gridItem').forEach((div) => {
     div.addEventListener('mouseover', e => {
-      div.classList.add('hoverEffect');
+      div.classList.add('stageOne');
       //console.log(div.id);
     });
   });
