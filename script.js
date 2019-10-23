@@ -1,25 +1,13 @@
-//global variables
+//Global Variables
 const gridContainer = document.querySelector('#gridContainer');
-const gridItems = document.createElement('div');
-const squares = document.querySelectorAll('.gridItem');
 
-//Create grid squares
-//const gridContainer = document.querySelector('#gridContainer');
+//Create initial grid container and squares
 for (i = 0; i < 256; i++) {
   const gridItems = document.createElement('div');
   gridContainer.appendChild(gridItems);
   gridItems.classList.add('gridItem');
-  assignGridId();
   mouseOver();
 };
-
-//Assign gridItem IDs
-function assignGridId() {
-  const squares = document.querySelectorAll('.gridItem');
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].id = i + 1;
-  };
-}  
 
 //Reset Function
 function resetGrid() {
@@ -38,20 +26,23 @@ document.querySelectorAll('#reset').forEach((button) => {
 //Resize Function
 function resizeGrid() {
   let userInput = window.prompt('How many squares per side?', '???');
+  let itemSide = (400 / userInput);
+  let squares = document.querySelectorAll('.gridItem');
   resetGrid();
-  if (userInput < 256) {
-    console.log('less than 256');
-    for (i = 256; i > (256 - userInput); i--) {
-      //remove 'i' child nodes
+  if (userInput < (squares.length / squares.length)) {
+    for (i = 0; i < (squares.length - (userInput * userInput)); i++) {
+      squares.remove(i);
     }
+    resizeItems(userInput, itemSide);
   } else {
-    console.log(userInput);
-    for (i = 256; i < userInput; i++) {
+    for (i = (squares.length); i < (userInput * userInput); i++) {
       const gridItems = document.createElement('div');
       gridContainer.appendChild(gridItems);
       gridItems.classList.add('gridItem');
-      assignGridId();
-    }
+      gridItems.style.minWidth = (itemSide + 'px');
+      gridItems.style.minHeight = (itemSide + 'px');
+    };
+    resizeItems(userInput, itemSide);
   }
   mouseOver();
 }
@@ -71,4 +62,12 @@ function mouseOver() {
       //console.log(div.id);
     });
   });
+}
+
+//Change gridItem size
+function resizeItems(userInput, itemSide) {
+  for (i = 0; i < (userInput * userInput); i++) {
+    document.getElementsByClassName('gridItem')[i].style.minHeight = (itemSide + 'px');
+    document.getElementsByClassName('gridItem')[i].style.minWidth = (itemSide + 'px');
+  }
 }
