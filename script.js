@@ -29,9 +29,9 @@ function resizeGrid() {
   let itemSide = (400 / userInput);
   let squares = document.querySelectorAll('.gridItem');
   resetGrid();
-  if (userInput < (squares.length / squares.length)) {
-    for (i = 0; i < (squares.length - (userInput * userInput)); i++) {
-      squares.remove(i);
+  if (userInput < (Math.sqrt(squares.length))) {
+    for (i = squares.length; i > (userInput * userInput); i--) {
+        gridContainer.removeChild(gridContainer.firstChild);
     }
     resizeItems(userInput, itemSide);
   } else {
