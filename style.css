@@ -1,23 +1,19 @@
-body{
+body {
   background-color: lightcoral; 
 }
 
 #container {
   display: flex;
-  padding-top: 50px;
+  padding-top: 25px;
   flex-direction: column;
-}
-
-#reset {
-
 }
 
 #frame {
   display: flex;
   min-width: 500px;
-  min-height: 500px;
+  min-height: 550px;
   max-width: 500px;
-  max-height: 500px;
+  max-height: 550px;
   background-color: red;
   margin: auto;
   border-radius: 5px;
@@ -26,7 +22,10 @@ body{
 }
 
 #title {
- margin: auto;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ margin-right: auto;
+ margin-left: auto;
  color:#faaa2a;
 }
 
@@ -38,7 +37,7 @@ body{
   min-height: 400px;
   margin: auto;
   flex-wrap: wrap;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }
 
 .gridItem {
@@ -51,4 +50,38 @@ body{
 .stageOne {
   flex: 1; /*not necessary?*/
   background-color: black;
+}
+
+button {
+  border-radius: 100%;
+  min-height: 75px;
+  min-width: 75px;
+  max-height: 75px;
+  max-width: 75px;
+  background-color: white;
+  border: none;
+  font-weight: bold;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+#buttonRow {
+  display: flex;
+  min-width: 475px;
+  max-width: 475px;
+  margin-right: auto;
+  margin-left: auto;
+  align-content: center;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.reset {
+  
+}
+
+.resize {
+  
 }
